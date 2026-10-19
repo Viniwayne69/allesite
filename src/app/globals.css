@@ -110,15 +110,21 @@ section { position: relative; }
 /* One straight line, like the reference. The size is capped so the line stops before Allê in the photo. */
 .hero-title { margin: 4px 0 32px; font-family: var(--font-heading); font-size: clamp(26px, 3.1vw, 52px); font-weight: 700; line-height: 1.02; text-transform: uppercase; white-space: nowrap; }
 
-/* On narrow screens the photo stays as the background, but very dark, so the text always reads clearly. */
+/* Mobile, modeled on the reference: a full-width photo on top that fades into the solid background,
+   with the text centered underneath it (so the text never sits on the busy part of the picture). */
 @media (max-width: 899px) {
-  .hero {
+  .hero { display: block; min-height: 0; background: var(--petroleum); }
+  .hero::before {
+    content: '';
+    display: block;
+    height: clamp(380px, 100vw, 560px);
     background:
-      linear-gradient(0deg, var(--petroleum) 0%, transparent 14%),
-      linear-gradient(180deg, rgb(0 45 60 / .94) 0%, rgb(0 45 60 / .9) 100%),
-      url('/images/hero-palestra.webp') 62% center / cover no-repeat;
+      linear-gradient(0deg, var(--petroleum) 0%, transparent 68%),
+      url('/images/hero-palestra.webp') 60% center / cover no-repeat;
   }
-  .hero-title { font-size: min(5.4vw, 44px); }
+  .hero-inner { margin-top: -40px; padding: 0 20px 64px; text-align: center; }
+  .hero-kicker { font-size: clamp(22px, 7.4vw, 34px); }
+  .hero-title { margin-bottom: 28px; font-size: clamp(30px, 8.6vw, 46px); white-space: normal; text-wrap: balance; }
 }
 
 /* ---------- About ---------- */
