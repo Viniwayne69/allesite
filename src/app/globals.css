@@ -103,16 +103,14 @@ section { position: relative; }
 /* Allê stands near the middle of the photo, so the text column stays narrow and never covers her. */
 .hero-title { max-width: min(620px, 42vw); margin: 4px 0 20px; font-family: var(--font-heading); font-size: clamp(40px, 5.4vw, 88px); font-weight: 700; line-height: .98; text-transform: uppercase; text-wrap: balance; }
 
-/* On narrow screens the text sits on top and the whole photo shows below it, so nothing covers Allê. */
+/* On narrow screens the photo stays as the background, but very dark, so the text always reads clearly. */
 @media (max-width: 899px) {
   .hero {
-    align-items: start;
     background:
-      linear-gradient(180deg, var(--petroleum) 0%, var(--petroleum) calc(100% - 340px), transparent calc(100% - 262px)),
-      url('/images/hero-palestra.webp') center bottom / 100% auto no-repeat,
-      var(--petroleum);
+      linear-gradient(0deg, var(--petroleum) 0%, transparent 14%),
+      linear-gradient(180deg, rgb(0 45 60 / .86) 0%, rgb(0 45 60 / .8) 100%),
+      url('/images/hero-palestra.webp') 62% center / cover no-repeat;
   }
-  .hero-inner { padding: 64px 20px 300px; }
   .hero-title { max-width: none; }
   .hero-sub { max-width: none; }
 }
