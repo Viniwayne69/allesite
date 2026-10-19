@@ -102,9 +102,10 @@ section { position: relative; }
     url('/images/hero-palestra.webp') center 75% / cover no-repeat;
 }
 .hero-inner { width: 100%; max-width: 1500px; padding: 110px clamp(20px, 6vw, 120px) 96px; text-align: left; }
-.hero-kicker { font-family: var(--font-heading); font-size: clamp(22px, 2.8vw, 40px); font-weight: 600; text-transform: uppercase; color: var(--mustard); }
+.hero-kicker { font-family: var(--font-heading); font-size: clamp(18px, 2.1vw, 32px); font-weight: 600; text-transform: uppercase; color: var(--mustard); }
 /* Allê stands near the middle of the photo, so the text column stays narrow and never covers her. */
-.hero-title { max-width: min(620px, 42vw); margin: 4px 0 32px; font-family: var(--font-heading); font-size: clamp(40px, 5.4vw, 88px); font-weight: 700; line-height: .98; text-transform: uppercase; text-wrap: balance; }
+/* One straight line, like the reference. The size is capped so the line stops before Allê in the photo. */
+.hero-title { margin: 4px 0 32px; font-family: var(--font-heading); font-size: clamp(26px, 3.1vw, 52px); font-weight: 700; line-height: 1.02; text-transform: uppercase; white-space: nowrap; }
 
 /* On narrow screens the photo stays as the background, but very dark, so the text always reads clearly. */
 @media (max-width: 899px) {
@@ -114,7 +115,7 @@ section { position: relative; }
       linear-gradient(180deg, rgb(0 45 60 / .94) 0%, rgb(0 45 60 / .9) 100%),
       url('/images/hero-palestra.webp') 62% center / cover no-repeat;
   }
-  .hero-title { max-width: none; }
+  .hero-title { font-size: min(6vw, 44px); }
 }
 
 /* ---------- About ---------- */
