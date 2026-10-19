@@ -1,0 +1,9 @@
+/* Paleta Allê Ebrahim (extraída do PDF "Proposta de Identidade Visual") */
+:root {
+  --alle-azul: #002D3C;          /* azul petróleo usado no logo, fundos e pattern */
+  --alle-azul-paleta: #00292F;   /* tom da página "Paleta cromática" do PDF (levemente mais escuro) */
+  --alle-bordo: #831417;
+  --alle-laranja: #DE6226;
+  --alle-mostarda: #DF9226;
+  --alle-branco: #FFF8EE;        /* branco quente sugerido para textos em fundo escuro (não consta no PDF) */
+}

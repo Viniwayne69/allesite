@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+:root {
+  --petroleum: var(--alle-azul);
+  --wine: var(--alle-bordo);
+  --orange: var(--alle-laranja);
+  --mustard: var(--alle-mostarda);
+  --warm-white: var(--alle-branco);
+}
+
+@theme inline {
+  --color-petroleum: var(--petroleum);
+  --color-wine: var(--wine);
+  --color-orange: var(--orange);
+  --color-mustard: var(--mustard);
+  --color-warm-white: var(--warm-white);
+  --font-sans: var(--font-fira);
+}
+
+* { box-sizing: border-box; }
+html { background: var(--petroleum); }
+body {
+  margin: 0;
+  background: var(--petroleum);
+  color: var(--warm-white);
+  font-family: var(--font-fira), sans-serif;
+}
