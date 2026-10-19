@@ -118,10 +118,10 @@ export const trainings = {
 };
 
 export const cta = {
-  kicker: 'Fale com a Allê',
-  title: 'Quero tirar dúvidas e levar a Allê para o meu time',
-  button: 'Chamar no WhatsApp',
-  href: whatsapp('Olá! Gostaria de tirar algumas dúvidas.'),
+  kicker: 'Consultoria gratuita',
+  title: 'Quero acelerar minhas vendas com estratégia',
+  button: 'Inscreva-se agora!',
+  href: whatsapp('Olá, Allê! Quero acelerar minhas vendas com estratégia e saber mais sobre a consultoria gratuita.'),
 };
 
 export const social = {
