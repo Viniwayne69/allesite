@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { menu, WHATSAPP_URL } from '@/data/content';
-import { InstagramIcon, WhatsAppIcon } from '@/components/Icons';
+import { menu, social, WHATSAPP_URL } from '@/data/content';
+import { FacebookIcon, InstagramIcon, TikTokIcon, WhatsAppIcon, YouTubeIcon } from '@/components/Icons';
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -13,7 +13,7 @@ export function Header() {
     <div className="site-header-inner">
       <Link className="site-logo" href="/" aria-label="Allê Ebrahim — início" onClick={close}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/brand/logo-alle-reduzida-claro.svg" alt="Allê Ebrahim" width={120} height={64} />
+        <img src="/brand/logo-alle-reduzida-claro.svg" alt="Allê Ebrahim" width={120} height={64} fetchPriority="high" />
       </Link>
       <nav className={`site-nav${open ? ' open' : ''}`} aria-label="Principal">
         <ul>{menu.map((item) => <li key={item.label}><a href={item.href} onClick={close}>{item.label}</a></li>)}</ul>
@@ -21,6 +21,9 @@ export function Header() {
       <div className="site-actions">
         <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><WhatsAppIcon /></a>
         <a href="https://www.instagram.com/alleebrahim/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><InstagramIcon /></a>
+        <a className="extra-social" href={social.links[1].href} target="_blank" rel="noopener noreferrer" aria-label="TikTok"><TikTokIcon /></a>
+        <a className="extra-social" href={social.links[2].href} target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FacebookIcon /></a>
+        <a className="extra-social" href={social.links[3].href} target="_blank" rel="noopener noreferrer" aria-label="YouTube"><YouTubeIcon /></a>
         <button type="button" className="site-burger" aria-label={open ? 'Fechar menu' : 'Abrir menu'} aria-expanded={open} onClick={() => setOpen((value) => !value)}>
           <span /><span /><span />
         </button>
