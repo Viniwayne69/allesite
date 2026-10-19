@@ -8,7 +8,7 @@ const firaCondensed = Fira_Sans_Extra_Condensed({ subsets: ['latin'], weight: ['
 
 export const metadata: Metadata = {
   title: 'Allê Ebrahim | Experiência em Vendas',
-  description: 'Site oficial de Allê Ebrahim.',
+  description: 'Vender fica mais leve quando existe conexão. Treinamentos, consultoria e implementação para equipes comerciais, com Allê Ebrahim.',
 };
 export const viewport: Viewport = { width: 'device-width', initialScale: 1, themeColor: '#002D3C' };
 

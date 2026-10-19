@@ -1,39 +1,44 @@
-// TODO: todo o texto abaixo é do site do Felipe Pereira (provisório). Trocar pelo conteúdo da Allê.
+// Conteúdo da Allê Ebrahim. Fontes: cartão digital (datas dos treinamentos, WhatsApp, Instagram, slogan)
+// e o texto de posicionamento do site anterior.
+// TODO (falta a Allê confirmar): número de WhatsApp definitivo, biografia com conquistas e números reais,
+// depoimentos, TikTok/Facebook/YouTube, links de inscrição dos treinamentos de 11/11 e 16/11 e política de privacidade.
 
 export const WHATSAPP_URL = 'https://wa.me/558199369935';
-export const CONSULTORIA_URL = 'https://wa.me/558199369935';
+export const INSTAGRAM_URL = 'https://www.instagram.com/alleebrahim/';
+export const VIRADA_URL = 'https://viradadevendas.vercel.app/';
+
+/** Link do WhatsApp com a mensagem já preenchida. */
+export const whatsapp = (text: string) => `${WHATSAPP_URL}?text=${encodeURIComponent(text)}`;
 
 export const menu = [
   { label: 'Início', href: '/' },
   { label: 'Allê Ebrahim', href: '#apresentacao' },
-  { label: 'Treinamentos', href: '#ajuda' },
-  { label: 'Mentoria', href: '#ajuda' },
-  { label: 'Palestras', href: '#ajuda' },
-  { label: 'Consultoria Grátis', href: CONSULTORIA_URL },
-  { label: 'Cases', href: '#cases' },
-  { label: 'Depoimentos', href: '#cases' },
-  { label: 'Livros', href: '#ajuda' },
+  { label: 'Soluções', href: '#ajuda' },
+  { label: 'Ebook', href: '#ebook' },
+  { label: 'Próximos treinamentos', href: '#treinamentos' },
   { label: 'Contato', href: '#contato' },
 ];
 
 export const hero = {
-  kicker: 'Acelero seu negócio com',
-  title: 'Inteligência artificial e marketing digital',
-  button: 'Conheça mais sobre mim',
+  kicker: 'Experiência em vendas',
+  title: 'Vender fica mais leve quando existe conexão',
+  subtitle: 'Treinamentos, consultoria e implementação para equipes comerciais que querem vender de forma mais humana e previsível.',
+  button: 'Fale com a Allê',
+  href: whatsapp('Olá, Allê! Vim pelo site e quero saber mais.'),
 };
 
 export const about = {
   title: 'Quem é',
-  name: 'Felipe Pereira?',
+  name: 'Allê Ebrahim?',
   items: [
-    'Empresário, palestrante, mentor e consultor em Marketing Digital',
-    'Fundador da Unu Digital, agência com 21 anos de mercado',
-    'Fundador e Mentor da Revolução Digital, com +510 agências em 16 países',
-    'Já ajudou mais de 4.400 negócios a venderem mais',
-    'Doutor em Gestão de Projetos',
-    'Escritor Best-Seller',
+    'Consultora, palestrante e especialista em vendas',
+    'Treinamentos, consultoria e implementação para equipes comerciais',
+    'Acredita em times mais preparados, conversas mais humanas e resultados que fazem sentido',
+    'Vender com verdade e constância',
+    'Vender fica mais leve quando existe conexão',
   ],
-  button: 'Saiba mais',
+  button: 'Fale com a Allê',
+  href: whatsapp('Olá, Allê! Quero conhecer o seu trabalho.'),
 };
 
 export const gallery = [
@@ -50,61 +55,91 @@ export const help = {
   highlight: 'ajudar?',
   cards: [
     {
-      title: 'Treinamentos',
-      text: 'Aprenda a Acelerar suas Vendas com Marketing Digital. Treinamentos on-line e presenciais, com conteúdo prático, efetivo e direto ao ponto.',
-      button: 'Conheça os treinamentos',
+      title: 'Treinamento',
+      text: 'Ensinamos seu time a fazer. Workshops, in company, turmas e imersões com conteúdo prático e direto ao ponto.',
+      button: 'Quero treinar meu time',
+      href: whatsapp('Olá, Allê! Quero saber mais sobre os treinamentos.'),
       image: '/images/palestra-lateral.webp',
     },
     {
-      title: 'Mentoria',
-      text: 'Quer um acompanhamento mais próximo para Acelerar suas Vendas? Tenha eu e meu time ao seu lado planejando, implementando e acompanhando suas estratégias digitais.',
-      button: 'Conheça a mentoria',
+      title: 'Consultoria',
+      text: 'Fazemos com você. Diagnóstico, plano de ação e acompanhamento para descobrir onde sua empresa está perdendo vendas.',
+      button: 'Quero uma consultoria',
+      href: whatsapp('Olá, Allê! Quero saber mais sobre a consultoria.'),
       image: '/images/palestra-slide.webp',
     },
     {
-      title: 'Livros',
-      text: 'Adquira meus best-sellers e tenha o conteúdo sempre à mão. Livros físicos e digitais sobre negócios digitais, marketing digital e muito mais!',
-      button: 'Conheça os livros',
+      title: 'Implementação',
+      text: 'Fazemos por você. Estruturamos processos, ferramentas e rotina comercial: CRM, site e páginas de venda, cadência e follow-up, scripts e processo comercial.',
+      button: 'Quero estruturar meu comercial',
+      href: whatsapp('Olá, Allê! Quero saber mais sobre a implementação.'),
       image: '/images/alle-recortada-2.webp',
+    },
+    {
+      // TODO: texto provisório, trocar pela descrição real do ebook.
+      id: 'ebook',
+      title: 'Ebook',
+      text: 'Conteúdo prático em formato ebook para você aplicar no seu dia a dia de vendas e com o seu time.',
+      button: 'Quero o ebook',
+      href: whatsapp('Olá, Allê! Quero saber mais sobre o ebook.'),
+      image: '/images/palestra-microfone.webp',
     },
   ],
 };
 
-export const cases = {
-  title: 'Cases de',
-  highlight: 'sucesso',
+export const trainings = {
+  title: 'Próximos',
+  highlight: 'treinamentos',
   items: [
-    { name: 'Omni Brasil', text: 'Consolidação como a mais renomada escola de hipnoterapia do país, formando mais alunos do que os outros 25 países somados.' },
-    { name: 'Rio Health Nutrition', text: 'Versão on-line não estava vendendo na pandemia e, após direcionamento estratégico, evento teve recorde de 7.120 inscritos.' },
-    { name: 'Macário Moraes', text: 'Aumento de audiência nas redes sociais, mais de R$ 150.000,00 de faturamento e centenas de vidas transformadas nas palestras e treinamentos.' },
+    {
+      name: 'Virada de Vendas',
+      date: '04/11',
+      text: 'Quero participar da Virada de Vendas.',
+      button: 'Quero participar',
+      href: VIRADA_URL,
+    },
+    {
+      name: 'Treinamento para vendedores',
+      date: '11/11',
+      text: 'Próximo treinamento para vendedores.',
+      button: 'Quero participar',
+      href: whatsapp('Olá, Allê! Quero participar do treinamento para vendedores de 11/11.'),
+    },
+    {
+      name: 'Treinamento para garçons',
+      date: '16/11',
+      text: 'Próximo treinamento para garçons.',
+      button: 'Quero participar',
+      href: whatsapp('Olá, Allê! Quero participar do treinamento para garçons de 16/11.'),
+    },
   ],
-  more: 'Conheça outros cases',
-  button: 'Saiba mais',
+  more: 'Quero treinamento só para a minha empresa',
+  moreHref: whatsapp('Olá! Quero um treinamento só para a minha empresa.'),
 };
 
 export const cta = {
-  kicker: 'Consultoria gratuita',
-  title: 'Quero acelerar minhas vendas com marketing digital',
-  button: 'Inscreva-se agora!',
+  kicker: 'Fale com a Allê',
+  title: 'Quero tirar dúvidas e levar a Allê para o meu time',
+  button: 'Chamar no WhatsApp',
+  href: whatsapp('Olá! Gostaria de tirar algumas dúvidas.'),
 };
 
 export const social = {
-  title: 'Siga-me nas',
-  highlight: 'redes sociais',
+  title: 'Acompanhe a',
+  highlight: 'Allê',
   links: [
-    { name: 'Instagram', href: 'https://www.instagram.com/alleebrahim/' },
-    { name: 'TikTok', href: 'https://www.tiktok.com/@felipeunu' },
-    { name: 'Facebook', href: 'https://www.facebook.com/felipeunu/' },
-    { name: 'YouTube', href: 'https://www.youtube.com/canaldigai' },
+    { name: 'Instagram', href: INSTAGRAM_URL },
+    { name: 'WhatsApp', href: WHATSAPP_URL },
   ],
 };
 
 export const footer = {
-  company: 'Unu Soluções e Serviços Digitais Ltda.',
-  cnpj: 'CNPJ: 07.004.550/0001-28',
+  company: 'Allê Ebrahim',
+  tagline: 'Vender fica mais leve quando existe conexão.',
   links: [
     { label: 'Início', href: '/' },
-    { label: 'Política de Privacidade', href: '#' },
+    { label: 'Allê Ebrahim', href: '#apresentacao' },
+    { label: 'Próximos treinamentos', href: '#treinamentos' },
     { label: 'Contato', href: '#contato' },
   ],
 };

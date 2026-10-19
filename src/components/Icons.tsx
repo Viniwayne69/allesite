@@ -24,4 +24,4 @@ export function CheckIcon() {
   return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5" /><path d="m7.5 12.5 3 3 6-6.5" /></svg>;
 }
 
-export const socialIcons = { Instagram: InstagramIcon, TikTok: TikTokIcon, Facebook: FacebookIcon, YouTube: YouTubeIcon } as const;
+export const socialIcons = { Instagram: InstagramIcon, WhatsApp: WhatsAppIcon, TikTok: TikTokIcon, Facebook: FacebookIcon, YouTube: YouTubeIcon } as const;
