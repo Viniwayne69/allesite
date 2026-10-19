@@ -89,18 +89,33 @@ section { position: relative; }
 }
 
 /* ---------- Hero ---------- */
-/* The photo's bottom edge carries an event watermark: the bottom fade and top-aligned cover keep it out of view. */
+/* Original photo, served as is (no recompression). Anchored low so Allê's head and the stage stay in view. */
 .hero {
   display: grid; align-items: center; min-height: calc(100svh - var(--header-h));
   background:
-    linear-gradient(0deg, var(--petroleum) 0%, transparent 16%),
-    linear-gradient(90deg, rgb(0 45 60 / .78) 0%, rgb(0 45 60 / .38) 45%, rgb(0 45 60 / 0) 70%),
-    url('/images/palestra-lateral.webp') center top / cover no-repeat;
+    linear-gradient(0deg, var(--petroleum) 0%, transparent 14%),
+    linear-gradient(90deg, rgb(0 45 60 / .88) 0%, rgb(0 45 60 / .55) 42%, rgb(0 45 60 / 0) 72%),
+    url('/images/hero-palestra.webp') center 75% / cover no-repeat;
 }
 .hero-inner { width: 100%; max-width: 1500px; padding: 110px clamp(20px, 6vw, 120px) 96px; text-align: left; }
 .hero-kicker { font-family: var(--font-heading); font-size: clamp(22px, 2.8vw, 40px); font-weight: 600; text-transform: uppercase; color: var(--mustard); }
-.hero-sub { max-width: 620px; margin: 0 0 30px; font-size: clamp(16px, 1.5vw, 21px); line-height: 1.5; color: color-mix(in srgb, var(--warm-white) 90%, transparent); }
-.hero-title { max-width: 900px; margin: 4px 0 20px; font-family: var(--font-heading); font-size: clamp(40px, 5.4vw, 88px); font-weight: 700; line-height: .98; text-transform: uppercase; text-wrap: balance; }
+.hero-sub { max-width: 500px; margin: 0 0 30px; font-size: clamp(16px, 1.5vw, 21px); line-height: 1.5; color: color-mix(in srgb, var(--warm-white) 90%, transparent); }
+/* Allê stands near the middle of the photo, so the text column stays narrow and never covers her. */
+.hero-title { max-width: min(620px, 42vw); margin: 4px 0 20px; font-family: var(--font-heading); font-size: clamp(40px, 5.4vw, 88px); font-weight: 700; line-height: .98; text-transform: uppercase; text-wrap: balance; }
+
+/* On narrow screens the text sits on top and the whole photo shows below it, so nothing covers Allê. */
+@media (max-width: 899px) {
+  .hero {
+    align-items: start;
+    background:
+      linear-gradient(180deg, var(--petroleum) 0%, var(--petroleum) calc(100% - 340px), transparent calc(100% - 262px)),
+      url('/images/hero-palestra.webp') center bottom / 100% auto no-repeat,
+      var(--petroleum);
+  }
+  .hero-inner { padding: 64px 20px 300px; }
+  .hero-title { max-width: none; }
+  .hero-sub { max-width: none; }
+}
 
 /* ---------- About ---------- */
 .about { padding: 72px 0 96px; background: var(--petroleum) url('/brand/pattern-branco.svg') repeat; background-size: 160px 160px; }
