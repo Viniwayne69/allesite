@@ -15,6 +15,7 @@ export const menu = [
   { label: 'Allê Ebrahim', href: '#apresentacao' },
   { label: 'Soluções', href: '#ajuda' },
   { label: 'Ebook', href: '#ebook' },
+  { label: 'Consultoria Grátis', href: '#consultoria' },
   { label: 'Próximos treinamentos', href: '#treinamentos' },
   { label: 'Contato', href: '#contato' },
 ];

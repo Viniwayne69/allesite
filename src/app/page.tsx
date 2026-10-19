@@ -68,7 +68,7 @@ export default function Home() {
         <Reveal effect="up"><a className="btn outline" href={trainings.moreHref} target="_blank" rel="noopener noreferrer">{trainings.more}</a></Reveal>
       </section>
 
-      <section className="cta">
+      <section className="cta" id="consultoria">
         <div className="cta-inner">
           <Reveal effect="up">
             <p className="cta-kicker">{cta.kicker}</p>
