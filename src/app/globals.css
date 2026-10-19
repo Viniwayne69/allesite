@@ -188,11 +188,12 @@ section { position: relative; }
 .cta-title { margin: 6px 0 34px; font-family: var(--font-heading); font-size: clamp(38px, 6.2vw, 84px); font-weight: 700; line-height: .98; text-transform: uppercase; text-wrap: balance; }
 /* Mobile: text higher and larger, and Allê's photo as wide as the screen. */
 @media (max-width: 899px) {
-  .cta-inner { padding-top: 40px; }
-  .cta-kicker { font-size: clamp(20px, 5.8vw, 30px); }
-  .cta-title { margin-bottom: 26px; font-size: clamp(40px, 12vw, 64px); }
-  .cta .btn { min-height: 58px; padding: 0 38px; font-size: 22px; }
-  .cta-photo { width: auto; margin: 22px calc(50% - min(50vw, 290px)) 0; }
+  .cta-inner { padding-top: 26px; }
+  .cta-kicker { font-size: clamp(16px, 4.6vw, 26px); }
+  .cta-title { margin: 4px 0 18px; font-size: clamp(30px, 9.4vw, 54px); }
+  .cta .btn { min-height: 50px; padding: 0 30px; font-size: 19px; }
+  /* The photo is about 130% of the screen width: the sides are cropped, but Allê stays whole. */
+  .cta-photo { width: auto; margin: 10px calc(50% - min(65vw, 380px)) 0; }
 }
 
 /* ---------- Social + footer ---------- */
