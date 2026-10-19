@@ -94,7 +94,7 @@ section { position: relative; }
   display: grid; align-items: center; min-height: calc(100svh - var(--header-h));
   background:
     linear-gradient(0deg, var(--petroleum) 0%, transparent 14%),
-    linear-gradient(90deg, rgb(0 45 60 / .88) 0%, rgb(0 45 60 / .55) 42%, rgb(0 45 60 / 0) 72%),
+    linear-gradient(90deg, rgb(0 45 60 / .95) 0%, rgb(0 45 60 / .86) 40%, rgb(0 45 60 / .45) 56%, rgb(0 45 60 / 0) 80%),
     url('/images/hero-palestra.webp') center 75% / cover no-repeat;
 }
 .hero-inner { width: 100%; max-width: 1500px; padding: 110px clamp(20px, 6vw, 120px) 96px; text-align: left; }
@@ -108,7 +108,7 @@ section { position: relative; }
   .hero {
     background:
       linear-gradient(0deg, var(--petroleum) 0%, transparent 14%),
-      linear-gradient(180deg, rgb(0 45 60 / .86) 0%, rgb(0 45 60 / .8) 100%),
+      linear-gradient(180deg, rgb(0 45 60 / .94) 0%, rgb(0 45 60 / .9) 100%),
       url('/images/hero-palestra.webp') 62% center / cover no-repeat;
   }
   .hero-title { max-width: none; }
