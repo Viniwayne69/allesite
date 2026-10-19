@@ -21,8 +21,8 @@ export const menu = [
 ];
 
 export const hero = {
-  kicker: 'Treino seu time para',
-  title: 'Vender com verdade e constância',
+  kicker: 'Vender fica mais leve',
+  title: 'Quando existe conexão e estratégia',
   button: 'Fale com a Allê',
   href: whatsapp('Olá, Allê! Vim pelo site e quero saber mais.'),
 };

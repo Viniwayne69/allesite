@@ -115,7 +115,7 @@ section { position: relative; }
       linear-gradient(180deg, rgb(0 45 60 / .94) 0%, rgb(0 45 60 / .9) 100%),
       url('/images/hero-palestra.webp') 62% center / cover no-repeat;
   }
-  .hero-title { font-size: min(6vw, 44px); }
+  .hero-title { font-size: min(5.4vw, 44px); }
 }
 
 /* ---------- About ---------- */
