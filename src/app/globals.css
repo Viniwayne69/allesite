@@ -61,7 +61,11 @@ section { position: relative; }
 /* ---------- Header ---------- */
 .site-header { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--petroleum) 92%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid rgb(255 255 255 / .08); }
 .site-header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: var(--header-h); padding-inline: clamp(20px, 2vw, 28px); }
-.site-logo img { display: block; height: 46px; width: auto; }
+/* Wordmark "Allê" with the pinwheel at its top-right, as in the main logo. */
+.site-logo { --logo-h: 46px; display: inline-flex; align-items: flex-start; gap: calc(var(--logo-h) * .1); }
+.site-logo img { display: block; width: auto; }
+.site-logo .wordmark { height: var(--logo-h); }
+.site-logo .pinwheel { height: calc(var(--logo-h) * .66); margin-top: calc(var(--logo-h) * .02); }
 .site-actions { display: flex; align-items: center; gap: 8px; }
 .site-actions > a { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 5px; background: var(--mustard); color: var(--petroleum); transition: transform 200ms ease, filter 200ms ease; }
 .site-actions > a:hover { transform: translateY(-2px); filter: brightness(1.1); }
@@ -77,7 +81,7 @@ section { position: relative; }
 .site-nav a:hover { color: var(--mustard); }
 @media (min-width: 1200px) {
   :root { --header-h: 92px; }
-  .site-logo img { height: 62px; }
+  .site-logo { --logo-h: 62px; }
   .site-actions { gap: 6px; }
   .site-actions > a { width: 38px; height: 38px; }
   .site-burger { display: none; }
@@ -99,9 +103,8 @@ section { position: relative; }
 }
 .hero-inner { width: 100%; max-width: 1500px; padding: 110px clamp(20px, 6vw, 120px) 96px; text-align: left; }
 .hero-kicker { font-family: var(--font-heading); font-size: clamp(22px, 2.8vw, 40px); font-weight: 600; text-transform: uppercase; color: var(--mustard); }
-.hero-sub { max-width: 500px; margin: 0 0 30px; font-size: clamp(16px, 1.5vw, 21px); line-height: 1.5; color: color-mix(in srgb, var(--warm-white) 90%, transparent); }
 /* Allê stands near the middle of the photo, so the text column stays narrow and never covers her. */
-.hero-title { max-width: min(620px, 42vw); margin: 4px 0 20px; font-family: var(--font-heading); font-size: clamp(40px, 5.4vw, 88px); font-weight: 700; line-height: .98; text-transform: uppercase; text-wrap: balance; }
+.hero-title { max-width: min(620px, 42vw); margin: 4px 0 32px; font-family: var(--font-heading); font-size: clamp(40px, 5.4vw, 88px); font-weight: 700; line-height: .98; text-transform: uppercase; text-wrap: balance; }
 
 /* On narrow screens the photo stays as the background, but very dark, so the text always reads clearly. */
 @media (max-width: 899px) {
@@ -112,7 +115,6 @@ section { position: relative; }
       url('/images/hero-palestra.webp') 62% center / cover no-repeat;
   }
   .hero-title { max-width: none; }
-  .hero-sub { max-width: none; }
 }
 
 /* ---------- About ---------- */
@@ -183,7 +185,7 @@ section { position: relative; }
 .social-list svg { width: 36px; height: 36px; }
 .site-footer { background: #00151c; border-top: 1px solid rgb(255 255 255 / .07); }
 .site-footer-inner { display: grid; gap: 22px; justify-items: center; max-width: 1180px; margin-inline: auto; padding: 56px 20px 48px; text-align: center; }
-.site-footer img { height: 56px; width: auto; }
+.site-footer .site-logo { --logo-h: 56px; }
 .site-footer p { font-size: 14px; line-height: 1.6; color: color-mix(in srgb, var(--warm-white) 70%, transparent); }
 .site-footer nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 26px; }
 .site-footer nav a { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }

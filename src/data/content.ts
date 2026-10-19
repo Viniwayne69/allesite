@@ -21,9 +21,8 @@ export const menu = [
 ];
 
 export const hero = {
-  kicker: 'Experiência em vendas',
-  title: 'Vender fica mais leve quando existe conexão',
-  subtitle: 'Treinamentos, consultoria e implementação para equipes comerciais que querem vender de forma mais humana e previsível.',
+  kicker: 'Treino seu time para',
+  title: 'Vender com verdade e constância',
   button: 'Fale com a Allê',
   href: whatsapp('Olá, Allê! Vim pelo site e quero saber mais.'),
 };

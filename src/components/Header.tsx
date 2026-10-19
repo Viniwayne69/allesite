@@ -13,7 +13,9 @@ export function Header() {
     <div className="site-header-inner">
       <Link className="site-logo" href="/" aria-label="Allê Ebrahim — início" onClick={close}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/brand/logo-alle-reduzida-claro.svg" alt="Allê Ebrahim" width={120} height={64} fetchPriority="high" />
+        <img className="wordmark" src="/brand/logo-alle-reduzida-claro.svg" alt="Allê Ebrahim" width={120} height={64} fetchPriority="high" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img className="pinwheel" src="/brand/catavento-mostarda.svg" alt="" aria-hidden="true" width={44} height={44} />
       </Link>
       <nav className={`site-nav${open ? ' open' : ''}`} aria-label="Principal">
         <ul>{menu.map((item) => <li key={item.label}><a href={item.href} onClick={close}>{item.label}</a></li>)}</ul>
