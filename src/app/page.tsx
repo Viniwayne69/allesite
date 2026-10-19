@@ -73,7 +73,10 @@ export default function Home() {
           <Reveal effect="up">
             <p className="cta-kicker">{cta.kicker}</p>
             <h2 className="cta-title">{cta.title}</h2>
-            <a className="btn dark" href={cta.href} target="_blank" rel="noopener noreferrer">{cta.button}</a>
+            <a className="btn" href={cta.href} target="_blank" rel="noopener noreferrer">{cta.button}</a>
+          </Reveal>
+          <Reveal effect="up" delay={250} className="cta-photo">
+            <Image src="/images/alle-sentada.webp" alt="Allê Ebrahim sentada, sorrindo" width={1254} height={1254} unoptimized />
           </Reveal>
         </div>
       </section>

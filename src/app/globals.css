@@ -166,10 +166,13 @@ section { position: relative; }
 @media (min-width: 1200px) { .help .cards { grid-template-columns: repeat(4, 1fr); } }
 
 /* ---------- CTA ---------- */
-.cta { background: var(--mustard) url('/images/fundo-rodape.webp') center 30% / cover no-repeat; color: var(--petroleum); text-align: center; }
-.cta::before { content: ''; position: absolute; inset: 0; background: var(--mustard); opacity: .88; }
-.cta-inner { position: relative; max-width: 980px; margin-inline: auto; padding: 96px 20px 104px; }
-.cta-kicker { font-family: var(--font-heading); font-size: clamp(20px, 2.4vw, 30px); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+/* Dark photo-less background with light rays; the photo of Allê rises from the bottom edge. */
+.cta { overflow: hidden; background: var(--petroleum) url('/images/cta-fundo-mobile.webp') center bottom / cover no-repeat; color: var(--warm-white); text-align: center; }
+@media (min-width: 900px) { .cta { background-image: url('/images/cta-fundo-pc.webp'); } }
+.cta-inner { position: relative; max-width: 980px; margin-inline: auto; padding: 88px 20px 0; }
+.cta-photo { width: min(82%, 480px); margin: 48px auto 0; }
+.cta-photo img { display: block; width: 100%; height: auto; }
+.cta-kicker { font-family: var(--font-heading); font-size: clamp(20px, 2.4vw, 30px); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--mustard); }
 .cta-title { margin: 6px 0 34px; font-family: var(--font-heading); font-size: clamp(38px, 6.2vw, 84px); font-weight: 700; line-height: .98; text-transform: uppercase; text-wrap: balance; }
 
 /* ---------- Social + footer ---------- */
