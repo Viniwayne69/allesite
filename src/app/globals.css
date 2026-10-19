@@ -186,6 +186,14 @@ section { position: relative; }
 .cta-photo img { display: block; width: 100%; height: auto; }
 .cta-kicker { font-family: var(--font-heading); font-size: clamp(20px, 2.4vw, 30px); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--mustard); }
 .cta-title { margin: 6px 0 34px; font-family: var(--font-heading); font-size: clamp(38px, 6.2vw, 84px); font-weight: 700; line-height: .98; text-transform: uppercase; text-wrap: balance; }
+/* Mobile: text higher and larger, and Allê's photo as wide as the screen. */
+@media (max-width: 899px) {
+  .cta-inner { padding-top: 40px; }
+  .cta-kicker { font-size: clamp(20px, 5.8vw, 30px); }
+  .cta-title { margin-bottom: 26px; font-size: clamp(40px, 12vw, 64px); }
+  .cta .btn { min-height: 58px; padding: 0 38px; font-size: 22px; }
+  .cta-photo { width: auto; margin: 22px calc(50% - min(50vw, 290px)) 0; }
+}
 
 /* ---------- Social + footer ---------- */
 .social { padding: 88px 20px; background: var(--deep); }
