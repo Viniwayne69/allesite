@@ -37,9 +37,12 @@ export const about = {
 };
 
 export const gallery = [
+  { src: '/images/palestra-selfie.webp', alt: 'Allê Ebrahim com a plateia acenando ao fundo' },
+  { src: '/images/palestra-lateral.webp', alt: 'Allê Ebrahim apresentando no palco para a plateia' },
+  { src: '/images/palestra-microfone.webp', alt: 'Allê Ebrahim com o microfone durante a palestra' },
+  { src: '/images/palestra-slide.webp', alt: 'Allê Ebrahim explicando um slide sobre personalização' },
   { src: '/images/fundo-cards.webp', alt: 'Treinamento com a plateia reunida' },
   { src: '/images/fundo-rodape.webp', alt: 'Plateia animada durante o treinamento' },
-  { src: '/images/alle.jpg', alt: 'Allê Ebrahim sorrindo' },
 ];
 
 export const help = {
@@ -50,13 +53,13 @@ export const help = {
       title: 'Treinamentos',
       text: 'Aprenda a Acelerar suas Vendas com Marketing Digital. Treinamentos on-line e presenciais, com conteúdo prático, efetivo e direto ao ponto.',
       button: 'Conheça os treinamentos',
-      image: '/images/fundo-cards.webp',
+      image: '/images/palestra-lateral.webp',
     },
     {
       title: 'Mentoria',
       text: 'Quer um acompanhamento mais próximo para Acelerar suas Vendas? Tenha eu e meu time ao seu lado planejando, implementando e acompanhando suas estratégias digitais.',
       button: 'Conheça a mentoria',
-      image: '/images/fundo-rodape.webp',
+      image: '/images/palestra-slide.webp',
     },
     {
       title: 'Livros',
