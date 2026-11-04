@@ -1,12 +1,22 @@
+import type { CSSProperties } from 'react';
 import Image from 'next/image';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Reveal } from '@/components/Reveal';
+import { TreeLines } from '@/components/TreeLines';
 import { CheckIcon } from '@/components/Icons';
 import { INSTAGRAM_URL } from '@/data/content';
 import type { Item, Training } from '@/data/treinamentos';
 
 const ext = { target: '_blank', rel: 'noopener noreferrer' } as const;
+
+// Cartões "Ontem, Hoje e Amanhã": cor e ícone por posição (relógio voltando, alvo, calendário).
+const wayTones = ['cream', 'mustard', 'wine'] as const;
+const wayIcons = [
+  <svg key="ontem" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5M12 7v5l4 2" /></svg>,
+  <svg key="hoje" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1" /></svg>,
+  <svg key="amanha" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>,
+];
 
 function ListItem({ item }: { item: Item }) {
   return <li>
@@ -31,7 +41,7 @@ export function TrainingPage({ training: t }: { training: Training }) {
   return <>
     <Header />
     <main>
-      <section className="tp-hero">
+      <section className="tp-hero" style={{ '--hero-photo': `url('${t.heroImage.src}')`, '--hero-pos': t.heroImage.position } as CSSProperties}>
         <div className="tp-hero-inner">
           <Reveal effect="up">
             <ul className="tp-chips">{t.chips.map((chip) => <li key={chip}>{chip}</li>)}</ul>
@@ -43,23 +53,23 @@ export function TrainingPage({ training: t }: { training: Training }) {
       </section>
 
       <section className="tp-audience">
-        <div className="tp-wrap tp-two">
-          <Reveal effect="up">
-            <h2 className="tp-title">Para quem é</h2>
-            <p className="tp-intro">{t.audience.intro}</p>
-          </Reveal>
-          <Reveal effect="up" delay={120}>
+        <div className="tp-wrap">
+          <div className="tp-split">
+            <Reveal effect="up"><h2 className="tp-title">Para quem é</h2></Reveal>
+            <Reveal effect="up" delay={120}><p className="tp-intro">{t.audience.intro}</p></Reveal>
+          </div>
+          <Reveal effect="up" delay={160}>
             {t.audience.listLead && <h3 className="tp-listlead">{t.audience.listLead}</h3>}
-            <ul className="tp-list">{t.audience.items.map((item) => <ListItem key={item} item={item} />)}</ul>
+            <ul className="tp-list tp-audience-list">{t.audience.items.map((item) => <ListItem key={item} item={item} />)}</ul>
           </Reveal>
         </div>
       </section>
 
       <section className="tp-why">
-        <div className="tp-wrap tp-narrow">
-          <Reveal effect="up">
-            <h2 className="tp-title">{t.why.title}</h2>
-            {t.why.paragraphs.map((text) => <p key={text} className="tp-text">{text}</p>)}
+        <div className="tp-wrap tp-split">
+          <Reveal effect="up"><h2 className="tp-title">{t.why.title}</h2></Reveal>
+          <Reveal effect="up" delay={120}>
+            {t.why.paragraphs.map((text, i) => <p key={text} className={i === 0 ? 'tp-text first' : 'tp-text'}>{text}</p>)}
             {t.why.highlight && <p className="tp-callout">{t.why.highlight}</p>}
           </Reveal>
         </div>
@@ -79,25 +89,27 @@ export function TrainingPage({ training: t }: { training: Training }) {
         </div>
       </section>}
 
-      {t.journey && <section className="tp-topics">
+      {t.journey && <section className="tp-topics tp-way">
         <div className="tp-wrap">
           <Reveal effect="up"><h2 className="tp-title">{t.journey.title}</h2></Reveal>
-          <div className="tp-steps">
-            {t.journey.steps.map((step, i) => <Reveal key={step.word} effect="up">
-              <article className="tp-step">
-                <div>
-                  <span className="tp-step-num">0{i + 1}</span>
-                  <p className="tp-step-word">{step.word}</p>
-                </div>
-                <div>
-                  <h3 className="tp-step-headline">{step.headline}</h3>
-                  {step.text && <p className="tp-text">{step.text}</p>}
-                  {step.items && <ul className={`tp-list${step.items.length > 5 ? ' cols' : ''}`}>
-                    {step.items.map((item) => <ListItem key={typeof item === 'string' ? item : item.lead} item={item} />)}
-                  </ul>}
-                </div>
-              </article>
-            </Reveal>)}
+          <div className="tp-way-wrap">
+            <TreeLines />
+            <div className="tp-way-grid">
+              {t.journey.steps.map((step, i) => <Reveal key={step.word} effect="up" delay={250 + i * 140} className="tp-way-cell">
+                <article className={`tp-way-card tone-${wayTones[i % wayTones.length]}`}>
+                  <span className="tp-way-icon">{wayIcons[i % wayIcons.length]}</span>
+                  <div className="tp-way-body">
+                    <h3>{step.word}</h3>
+                    <p className="tp-way-sub">{step.headline}</p>
+                    <span className="tp-way-rule" aria-hidden="true" />
+                    {step.text && <p className="tp-way-text">{step.text}</p>}
+                    {step.items && <ul className="tp-way-list">
+                      {step.items.map((item) => <ListItem key={typeof item === 'string' ? item : item.lead} item={item} />)}
+                    </ul>}
+                  </div>
+                </article>
+              </Reveal>)}
+            </div>
           </div>
         </div>
       </section>}
@@ -152,10 +164,10 @@ export function TrainingPage({ training: t }: { training: Training }) {
       </section>
 
       <section className="tp-faq">
-        <div className="tp-wrap tp-narrow">
+        <div className="tp-wrap tp-split">
           <Reveal effect="up"><h2 className="tp-title">Perguntas frequentes</h2></Reveal>
           <Reveal effect="up" delay={100}>
-            <div>{t.faq.map((item) => <details key={item.q} className="tp-faq-item">
+            <div className="tp-faq-list">{t.faq.map((item) => <details key={item.q} className={item.desktopOnly ? 'tp-faq-item desktop-only' : 'tp-faq-item'}>
               <summary>{item.q}</summary>
               <p>{item.a}</p>
             </details>)}</div>

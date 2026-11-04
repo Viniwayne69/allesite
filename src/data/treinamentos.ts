@@ -18,6 +18,8 @@ export type Training = {
   title: [string, string];
   subtitle: string;
   chips: string[];
+  /** Foto de fundo do topo da página (a mesma do cartão na home). */
+  heroImage: { src: string; position: string };
   cta: { label: string; href: string };
   audience: { intro: string; listLead?: string; items: string[] };
   why: { title: string; paragraphs: string[]; highlight?: string };
@@ -34,7 +36,7 @@ export type Training = {
     cta: string;
   };
   hosts: { title: string; people: Person[]; closing?: string; links?: boolean };
-  faq: { q: string; a: string }[];
+  faq: { q: string; a: string; desktopOnly?: boolean }[];
 };
 
 const ALLE_PHOTO = '/images/alle-recortada-3.webp';
@@ -46,6 +48,7 @@ export const trainingPages: Training[] = [
     subtitle:
       'Um treinamento para as equipes de atendimento de negócios de alimentação (restaurantes, bares, cafeterias, confeitarias e docerias) atenderem melhor, venderem mais em cada mesa e fazerem o cliente voltar. Dia 16/11, das 8h30 às 12h30, no Sebrae PE.',
     chips: ['16/11', '8h30 às 12h30', 'Sebrae PE'],
+    heroImage: { src: '/images/treinamentos-fundo-2.webp', position: '50% 30%' },
     cta: { label: 'Quero inscrever minha equipe', href: SEBRAE_GARCONS_URL },
     audience: {
       intro:
@@ -130,6 +133,7 @@ export const trainingPages: Training[] = [
     subtitle:
       'Prepare a sua equipe antes do período em que o movimento aumenta, os clientes estão mais dispostos a comprar e cada oportunidade precisa virar venda. Dia 11/11, das 8h30 às 12h30, no Sebrae PE.',
     chips: ['11/11', '8h30 às 12h30', 'Sebrae PE'],
+    heroImage: { src: '/images/treinamentos-fundo.webp', position: '60% 10%' },
     cta: { label: 'Quero inscrever minha equipe', href: SEBRAE_VENDEDORES_URL },
     audience: {
       intro:
@@ -213,6 +217,7 @@ export const trainingPages: Training[] = [
     subtitle:
       '8 horas, ao vivo e presencial, para olhar os números do seu negócio, entender o que funcionou em 2026 e sair com metas e calendário de 2027 prontos. Apenas 10 vagas.',
     chips: ['15/12', '8 horas', 'Sebrae', 'Apenas 10 vagas'],
+    heroImage: { src: '/images/treinamentos-fundo-3.webp', position: '50% 22%' },
     cta: { label: 'Quero minha vaga', href: INSCRICAO_MESA_URL },
     audience: {
       intro: 'Para donos de empresa, gestores e autônomos que:',
