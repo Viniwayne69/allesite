@@ -12,19 +12,53 @@ export const whatsapp = (text: string) => `${WHATSAPP_URL}?text=${encodeURICompo
 
 export const menu = [
   { label: 'Início', href: '/' },
-  { label: 'Allê Ebrahim', href: '#apresentacao' },
-  { label: 'Soluções', href: '#ajuda' },
-  { label: 'Ebook', href: '#ebook' },
-  { label: 'Consultoria Grátis', href: '#consultoria' },
-  { label: 'Próximos treinamentos', href: '#treinamentos' },
-  { label: 'Contato', href: '#contato' },
+  { label: 'Allê Ebrahim', href: '/#apresentacao' },
+  { label: 'Soluções', href: '/#treinamentos' },
+  { label: 'Depoimentos', href: '/#depoimentos' },
+  { label: 'Contato', href: '/#contato' },
 ];
+
+// Depoimentos copiados do site da Virada de Vendas (viradadevendas.vercel.app), sem alteração.
+export const testimonials = {
+  title: 'Quem viveu um treinamento da',
+  highlight: 'Allê',
+  items: [
+    {
+      title: 'Saí da palestra encantada',
+      image: '/images/depoimento-1.webp',
+      text: 'Eu saí da palestra de sábado encantada com o seu conteúdo, a didática, a postura e a sua presença. Não tem ser humano no mundo que não se envolva e não pare para ouvir cada palavra sua. Maravilhosa!',
+    },
+    {
+      title: 'Super esclarecedor',
+      image: '/images/depoimento-2.webp',
+      text: 'O treinamento foi super esclarecedor. Você é muito criativa e nos instiga a sair da caixinha. Saí com muitas ideias e tenho certeza de que irão trazer resultados, principalmente sobre a importância de fazer uma qualificação e uma sondagem mais eficientes. Mas a principal parte para mim foi sobre não esquecer os meus próprios objetivos: às vezes entramos no modo automático e esquecemos os motivos que nos fizeram começar. Sempre busco me desenvolver, como você disse, e vou buscar aprender mais com você a partir de agora. Adorei que você é enérgica e mostra na prática como fazer.',
+    },
+    {
+      title: 'Bem mais dinâmico e proveitoso',
+      image: '/images/depoimento-3.webp',
+      text: 'Eu gostei bastante, achei bem mais dinâmico que o da outra vez. Foi mais leve também e bastante proveitoso para a minha rotina em loja.',
+    },
+    {
+      title: 'Todas as estratégias foram muito boas',
+      image: '/images/depoimento-4.webp',
+      text: 'Foi muito produtiva a palestra. Todas as estratégias que ela falou foram muito boas. Uma das mais importantes foi gerar um relacionamento com o cliente, ou seja, saber conquistar, escutar o cliente e ter hospitalidade para ele se sentir bem no ambiente, porque o bom atendimento faz toda a diferença e o cliente sempre vai querer voltar. Se colocarmos em prática, acredito que dará muito certo. Desde já agradeço a vocês pela oportunidade que me deram.',
+    },
+    {
+      title: 'Tem sido um prazer aprender com você',
+      image: '/images/depoimento-5.webp',
+      text: 'Você merece reconhecimento para valer, viu? Tem sido um prazer ouvir e aprender com você. Tenho aprendido com o seu exemplo, com a habilidade de resgatar ideias, validar pessoas e promover outros olhares de uma forma respeitosa. Que bom que você chegou na equipe com leveza, bom humor, gargalhada… mas também foco, direção e assertividade.',
+    },
+  ],
+  author: 'Participante do treinamento',
+  more: 'Ler mais',
+  less: 'Ler menos',
+};
 
 export const hero = {
   kicker: 'Vender fica mais leve',
   title: 'Quando existe conexão e estratégia',
-  button: 'Fale com a Allê',
-  href: whatsapp('Olá, Allê! Vim pelo site e quero saber mais.'),
+  button: 'Próximos treinamentos',
+  href: '#treinamentos',
 };
 
 export const about = {
@@ -42,12 +76,11 @@ export const about = {
 };
 
 export const gallery = [
-  { src: '/images/palestra-selfie.webp', alt: 'Allê Ebrahim com a plateia acenando ao fundo' },
-  { src: '/images/palestra-lateral.webp', alt: 'Allê Ebrahim apresentando no palco para a plateia' },
-  { src: '/images/palestra-microfone.webp', alt: 'Allê Ebrahim com o microfone durante a palestra' },
-  { src: '/images/palestra-slide.webp', alt: 'Allê Ebrahim explicando um slide sobre personalização' },
-  { src: '/images/fundo-cards.webp', alt: 'Treinamento com a plateia reunida' },
-  { src: '/images/fundo-rodape.webp', alt: 'Plateia animada durante o treinamento' },
+  { src: '/images/galeria-1.webp', alt: 'Allê Ebrahim de perfil, de blazer bege, falando para a plateia' },
+  { src: '/images/galeria-2.webp', alt: 'Allê Ebrahim abraçando um participante do evento' },
+  { src: '/images/galeria-3.webp', alt: 'Allê Ebrahim com o microfone diante da turma reunida na sala' },
+  { src: '/images/galeria-4.webp', alt: 'Allê Ebrahim com o microfone em meio aos participantes do treinamento' },
+  { src: '/images/galeria-5.webp', alt: 'Allê Ebrahim apresentando em frente ao telão para a turma' },
 ];
 
 export const help = {
@@ -92,25 +125,29 @@ export const trainings = {
   highlight: 'treinamentos',
   items: [
     {
-      name: 'Virada de Vendas',
-      date: '04/11',
-      text: 'Quero participar da Virada de Vendas.',
-      button: 'Quero participar',
-      href: VIRADA_URL,
-    },
-    {
-      name: 'Treinamento para vendedores',
+      name: 'Apaixonados por Vendas',
       date: '11/11',
-      text: 'Próximo treinamento para vendedores.',
+      text: 'Treinamento para vendedores e equipes comerciais.',
       button: 'Quero participar',
-      href: whatsapp('Olá, Allê! Quero participar do treinamento para vendedores de 11/11.'),
+      href: '/apaixonados-por-vendas',
+      image: '/images/treinamentos-fundo.webp',
     },
     {
-      name: 'Treinamento para garçons',
+      name: 'Profissionalismo à Mesa',
       date: '16/11',
-      text: 'Próximo treinamento para garçons.',
+      text: 'Treinamento para garçons e maîtres.',
       button: 'Quero participar',
-      href: whatsapp('Olá, Allê! Quero participar do treinamento para garçons de 16/11.'),
+      href: '/profissionalismo-a-mesa',
+      image: '/images/treinamentos-fundo-2.webp',
+    },
+    {
+      name: 'Mesa Estratégica',
+      date: '15/12',
+      text: 'O seu 2027 planejado em um dia, com apenas 10 vagas.',
+      button: 'Quero participar',
+      href: '/mesa-estrategica',
+      image: '/images/treinamentos-fundo-3.webp',
+      imagePos: '38% 20%',
     },
   ],
   more: 'Quero treinamento só para a minha empresa',
@@ -118,15 +155,15 @@ export const trainings = {
 };
 
 export const cta = {
-  kicker: 'Consultoria gratuita',
+  kicker: 'Fale com a minha equipe',
   title: 'Quero acelerar minhas vendas com estratégia',
-  button: 'Inscreva-se agora!',
-  href: whatsapp('Olá, Allê! Quero acelerar minhas vendas com estratégia e saber mais sobre a consultoria gratuita.'),
+  button: 'Falar com a equipe',
+  href: whatsapp('Olá, Allê! Quero acelerar minhas vendas com estratégia e falar com a sua equipe.'),
 };
 
 export const social = {
-  title: 'Acompanhe a',
-  highlight: 'Allê',
+  title: 'Me',
+  highlight: 'acompanhe',
   links: [
     { name: 'Instagram', href: INSTAGRAM_URL },
     { name: 'WhatsApp', href: WHATSAPP_URL },
@@ -138,8 +175,8 @@ export const footer = {
   tagline: 'Vender fica mais leve quando existe conexão.',
   links: [
     { label: 'Início', href: '/' },
-    { label: 'Allê Ebrahim', href: '#apresentacao' },
-    { label: 'Próximos treinamentos', href: '#treinamentos' },
-    { label: 'Contato', href: '#contato' },
+    { label: 'Allê Ebrahim', href: '/#apresentacao' },
+    { label: 'Próximos treinamentos', href: '/#treinamentos' },
+    { label: 'Contato', href: '/#contato' },
   ],
 };
