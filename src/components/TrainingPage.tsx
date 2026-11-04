@@ -4,8 +4,10 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Reveal } from '@/components/Reveal';
 import { TreeLines } from '@/components/TreeLines';
+import { EnrollForm } from '@/components/EnrollForm';
 import { CheckIcon } from '@/components/Icons';
 import { INSTAGRAM_URL } from '@/data/content';
+import { PLANILHA_INSCRICOES_URL } from '@/data/treinamentos';
 import type { Item, Training } from '@/data/treinamentos';
 
 const ext = { target: '_blank', rel: 'noopener noreferrer' } as const;
@@ -23,6 +25,15 @@ function ListItem({ item }: { item: Item }) {
     <CheckIcon />
     <span>{typeof item === 'string' ? item : <><strong>{item.lead}:</strong> {item.text}</>}</span>
   </li>;
+}
+
+/** O formulário só entra na página quando o endereço da planilha está configurado. */
+const hasEnrollForm = (t: Training) => !!t.cta.form && !!PLANILHA_INSCRICOES_URL;
+
+/** Botão de inscrição: rola até o formulário da página quando há um, senão leva ao link de inscrição. */
+function CtaButton({ training: t, label }: { training: Training; label: string }) {
+  if (hasEnrollForm(t)) return <a className="btn" href="#inscricao">{label}</a>;
+  return <a className="btn" href={t.cta.href} {...ext}>{label}</a>;
 }
 
 function Price({ prices }: { prices: Training['investment']['prices'] }) {
@@ -47,7 +58,7 @@ export function TrainingPage({ training: t }: { training: Training }) {
             <ul className="tp-chips">{t.chips.map((chip) => <li key={chip}>{chip}</li>)}</ul>
             <h1 className="tp-h1"><span className="tp-h1-lead">{t.title[0]}</span> <span className="tp-h1-tail">{t.title[1]}</span></h1>
             <p className="tp-sub">{t.subtitle}</p>
-            <a className="btn" href={t.cta.href} {...ext}>{t.cta.label}</a>
+            <CtaButton training={t} label={t.cta.label} />
           </Reveal>
         </div>
       </section>
@@ -136,11 +147,21 @@ export function TrainingPage({ training: t }: { training: Training }) {
               <h2 className="tp-title">{t.investment.title}</h2>
               <Price prices={t.investment.prices} />
               {t.investment.bonus && <p className="tp-bonus"><strong>{bonusLead}:</strong> {bonusRest.join(': ')}</p>}
-              <a className="btn" href={t.cta.href} {...ext}>{t.investment.cta}</a>
+              <CtaButton training={t} label={t.investment.cta} />
             </div>
           </Reveal>
         </div>
       </section>
+
+      {hasEnrollForm(t) && <section className="tp-enroll" id="inscricao">
+        <div className="tp-wrap">
+          <Reveal effect="up">
+            <h2 className="tp-title">Quero minha vaga</h2>
+            <p className="enroll-sub">{t.title[0].replace(/:$/, '')}: preencha os seus dados para garantir a inscrição.</p>
+          </Reveal>
+          <Reveal effect="up" delay={120}><EnrollForm training={t.title[0].replace(/:$/, '')} /></Reveal>
+        </div>
+      </section>}
 
       <section className="tp-hosts">
         <div className="tp-wrap">

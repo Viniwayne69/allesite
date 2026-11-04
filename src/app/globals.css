@@ -165,7 +165,7 @@ section { position: relative; }
 .card-body { display: flex; flex: 1; flex-direction: column; align-items: flex-start; gap: 14px; padding: 26px 26px 30px; }
 .card h3, .case h3 { font-family: var(--font-heading); font-size: 32px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; color: var(--mustard); }
 .card p, .case p { flex: 1; line-height: 1.55; color: color-mix(in srgb, var(--warm-white) 88%, transparent); }
-.cases { background: var(--petroleum); text-align: center; }
+.cases { background: linear-gradient(rgb(0 31 41 / .35), rgb(0 31 41 / .35)), url('/images/colagem-textura.webp') center / cover no-repeat, var(--petroleum); text-align: center; }
 .case.photo { background: linear-gradient(rgb(0 31 41 / .7), rgb(0 31 41 / .88)), var(--case-photo) var(--case-pos, 55% 25%) / cover no-repeat; }
 .case { align-items: flex-start; gap: 16px; padding: 32px 28px; text-align: left; }
 .cases > .reveal:last-child { margin-top: 48px; }
@@ -194,7 +194,8 @@ section { position: relative; }
 }
 
 /* ---------- Social + footer ---------- */
-.social { padding: 88px 20px; background: var(--deep); }
+.social { padding: 88px 20px; background: linear-gradient(rgb(0 31 41 / .4), rgb(0 31 41 / .4)), url('/images/colagem-moldura.webp') center / cover no-repeat, var(--deep); }
+.social.testimonials { background: var(--deep); }
 .social-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; margin-top: 44px; }
 .social-list a { display: grid; justify-items: center; gap: 10px; width: 112px; padding: 22px 8px 16px; border: 1px solid rgb(223 146 38 / .5); border-radius: 14px; color: var(--mustard); text-decoration: none; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; transition: transform 250ms ease, background 250ms ease, color 250ms ease; }
 .social-list a:hover { transform: translateY(-6px); background: var(--mustard); color: var(--petroleum); }
@@ -222,7 +223,7 @@ section { position: relative; }
   .quote-title { font-size: 24px; }
   .quote blockquote { font-size: 16px; }
 }
-.site-footer { background: #00151c; border-top: 1px solid rgb(255 255 255 / .07); }
+.site-footer { background: linear-gradient(rgb(0 21 28 / .72), rgb(0 21 28 / .72)), url('/images/colagem-textura.webp') center / cover no-repeat, #00151c; border-top: 1px solid rgb(255 255 255 / .07); }
 .site-footer-inner { display: grid; gap: 22px; justify-items: center; max-width: 1180px; margin-inline: auto; padding: 56px 20px 48px; text-align: center; }
 .site-footer .site-logo { --logo-h: 56px; }
 .site-footer p { font-size: 14px; line-height: 1.6; color: color-mix(in srgb, var(--warm-white) 70%, transparent); }
@@ -394,6 +395,25 @@ section { position: relative; }
   .tp-host-photo { width: min(70%, 300px); }
   .tp-host-grid.single .tp-host-photo { width: 100%; }
 }
+
+/* ---------- Formulário de inscrição (seção da página) ---------- */
+.tp-enroll { background: color-mix(in srgb, var(--wine) 38%, var(--deep)); scroll-margin-top: 64px; }
+.tp-enroll .tp-wrap { max-width: 640px; text-align: center; }
+.enroll-sub { margin: 14px 0 32px; font-size: clamp(17px, 1.9vw, 20px); line-height: 1.55; color: color-mix(in srgb, var(--warm-white) 85%, transparent); }
+.enroll { padding: 30px 24px 28px; border: 1px solid rgb(223 146 38 / .5); border-radius: 16px; background: var(--petroleum); color: var(--warm-white); text-align: left; }
+.enroll h3 { font-family: var(--font-heading); font-size: 34px; font-weight: 700; line-height: 1.05; text-transform: uppercase; color: var(--mustard); }
+.enroll { display: grid; gap: 14px; }
+.enroll label { display: grid; gap: 6px; font-size: 14px; font-weight: 700; letter-spacing: .02em; }
+.enroll input:not(.enroll-trap) { min-height: 48px; padding: 0 14px; border: 1px solid rgb(255 255 255 / .22); border-radius: 8px; background: color-mix(in srgb, var(--petroleum) 70%, black); color: var(--warm-white); font: inherit; font-size: 16px; font-weight: 500; }
+.enroll input:focus-visible { outline: 3px solid var(--mustard); outline-offset: 1px; }
+.enroll input[aria-invalid='true'] { border-color: var(--orange); }
+.enroll-error { font-size: 13px; font-weight: 500; color: #ff9b73; }
+.enroll-trap { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.enroll-lgpd { font-size: 13px; line-height: 1.45; color: color-mix(in srgb, var(--warm-white) 68%, transparent); }
+.enroll .btn { width: 100%; margin-top: 4px; cursor: pointer; }
+.enroll .btn:disabled { opacity: .6; cursor: wait; }
+.enroll-done { display: grid; gap: 16px; padding-top: 8px; }
+.enroll-done p { line-height: 1.55; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

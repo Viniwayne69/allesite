@@ -4,6 +4,10 @@
 // e a pergunta "Dá para fazer dentro do meu estabelecimento?" do Profissionalismo à Mesa (ainda sem resposta).
 
 export const SEBRAE_VENDEDORES_URL = 'https://pe.loja.sebrae.com.br/treinamento-de-vendas-ev-931677';
+// Script do Google que grava as inscrições na planilha "Mesa estratégica" (aba Inscrições).
+export const PLANILHA_INSCRICOES_URL =
+  process.env.NEXT_PUBLIC_INSCRICAO_URL
+  ?? 'https://script.google.com/macros/s/AKfycbwXiOr5ua5h53wONUgy0CbiIBtgPI1X6rCnvBlFSVpx9zAC3Ojw7BRrsirUL2Vo9Qjg/exec';
 export const INSCRICAO_MESA_URL = 'https://docs.google.com/document/d/1bB3XRxNCDfWNa8tQeq9kgV3guuBFQT32ZKxlhjNgc4s/edit?usp=sharing';
 export const SEBRAE_GARCONS_URL = 'https://pe.loja.sebrae.com.br/profissionalismo-a-mesa-habilidades-para-garcons-de-sucesso-ev-931692';
 
@@ -20,7 +24,7 @@ export type Training = {
   chips: string[];
   /** Foto de fundo do topo da página (a mesma do cartão na home). */
   heroImage: { src: string; position: string };
-  cta: { label: string; href: string };
+  cta: { label: string; href: string; form?: boolean };
   audience: { intro: string; listLead?: string; items: string[] };
   why: { title: string; paragraphs: string[]; highlight?: string };
   /** Cartões "O que vamos trabalhar" (Mesa Estratégica usa `journey` no lugar). */
@@ -218,7 +222,7 @@ export const trainingPages: Training[] = [
       '8 horas, ao vivo e presencial, para olhar os números do seu negócio, entender o que funcionou em 2026 e sair com metas e calendário de 2027 prontos. Apenas 10 vagas.',
     chips: ['15/12', '8 horas', 'Sebrae', 'Apenas 10 vagas'],
     heroImage: { src: '/images/treinamentos-fundo-3.webp', position: '50% 22%' },
-    cta: { label: 'Quero minha vaga', href: INSCRICAO_MESA_URL },
+    cta: { label: 'Quero minha vaga', href: INSCRICAO_MESA_URL, form: true },
     audience: {
       intro: 'Para donos de empresa, gestores e autônomos que:',
       items: [
