@@ -312,13 +312,13 @@ export const trainingPages: Training[] = [
       people: [
         {
           name: 'Allê Ebrahim',
-          bio: 'Comecei como vendedora. Fui gerente e supervisora em uma grande rede de varejo, empreendi no ramo de entretenimento e alimentação e hoje tenho uma empresa de treinamentos de vendas que já preparou milhares de pessoas. Conheço o balcão e conheço a planilha, sei do valor do entusiasmo e da técnica juntas para fazer bons resultados para os negócios em que entro.',
+          bio: 'Começou como vendedora, foi gerente e supervisora em uma grande rede de varejo, empreendeu nos ramos de entretenimento e alimentação e hoje tem uma empresa de treinamentos de vendas que já preparou milhares de pessoas. Conhece o balcão e a planilha, e sabe o valor do entusiasmo e da técnica juntos para fazer bons resultados para os negócios em que entra.',
           photo: ALLE_PHOTO,
         },
         {
           name: 'Priscilla Figueirôa',
           photo: '/images/priscilla.webp',
-          bio: 'Consultora de vendas, com 14 anos de experiência como empreendedora, período em que estive à frente da minha própria marca. Essa trajetória me proporcionou uma vivência prática em vendas, gestão de negócios, relacionamento com clientes e vendas on-line. Hoje, utilizo toda essa experiência para ajudar empresas a desenvolverem estratégias comerciais, aprimorarem seus processos e alcançarem melhores resultados.',
+          bio: 'Consultora de vendas, com 14 anos de experiência como empreendedora, período em que esteve à frente da própria marca. Essa trajetória proporcionou uma vivência prática em vendas, gestão de negócios, relacionamento com clientes e vendas on-line. Hoje, utiliza toda essa experiência para ajudar empresas a desenvolverem estratégias comerciais, aprimorarem seus processos e alcançarem melhores resultados.',
         },
       ],
       closing: 'E é esta combinação que levamos para a Mesa Estratégica',

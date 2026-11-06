@@ -79,8 +79,8 @@ export function EnrollForm({ training }: { training: string }) {
 
   if (status === 'done') {
     return <div className="enroll enroll-done" role="status">
-      <h3>Inscrição recebida!</h3>
-      <p>Recebemos os seus dados para o treinamento <strong>{training}</strong>. Obrigada pelo interesse.</p>
+      <h3>Uhul, sua vaga está a caminho!</h3>
+      <p>Recebemos os seus dados para o treinamento <strong>{training}</strong> e estamos muito animadas em ter você com a gente! Em breve entramos em contato pelo WhatsApp</p>
       <button type="button" className="btn" onClick={() => setStatus('idle')}>Enviar outra inscrição</button>
     </div>;
   }
