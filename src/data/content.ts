@@ -1,7 +1,7 @@
 // Conteúdo da Allê Ebrahim. Fontes: cartão digital (datas dos treinamentos, WhatsApp, Instagram, slogan)
 // e o texto de posicionamento do site anterior.
 // TODO (falta a Allê confirmar): número de WhatsApp definitivo, biografia com conquistas e números reais,
-// depoimentos, TikTok/Facebook/YouTube, links de inscrição dos treinamentos de 11/11 e 16/11 e política de privacidade.
+// depoimentos, TikTok/Facebook/YouTube, links de inscrição dos treinamentos de 02/12 (Recife e Carpina) e política de privacidade.
 
 export const WHATSAPP_URL = 'https://wa.me/558199369935';
 export const INSTAGRAM_URL = 'https://www.instagram.com/alleebrahim/';
@@ -126,18 +126,18 @@ export const trainings = {
   items: [
     {
       name: 'Apaixonados por Vendas',
-      date: '11/11',
-      text: 'Treinamento para vendedores e equipes comerciais.',
+      date: '02/12',
+      text: 'Sebrae Recife, das 18h às 22h. Investimento de R$ 126.',
       button: 'Quero participar',
-      href: '/apaixonados-por-vendas',
+      href: '/apaixonados-por-vendas-recife',
       image: '/images/treinamentos-fundo.webp',
     },
     {
-      name: 'Profissionalismo à Mesa',
-      date: '16/11',
-      text: 'Treinamento para garçons e maîtres.',
+      name: 'Apaixonados por Vendas',
+      date: '02/12',
+      text: 'Sebrae Carpina, das 8h às 12h. Investimento de R$ 126.',
       button: 'Quero participar',
-      href: '/profissionalismo-a-mesa',
+      href: '/apaixonados-por-vendas-carpina',
       image: '/images/treinamentos-fundo-2.webp',
     },
     {

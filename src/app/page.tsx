@@ -37,7 +37,7 @@ export default function Home() {
       <section className="cases" id="treinamentos">
         <Reveal effect="up"><h2 className="title center">{trainings.title} <strong>{trainings.highlight}</strong></h2></Reveal>
         <div className="cards">
-          {trainings.items.map((item, i) => <Reveal key={item.name} effect="zoom" delay={i * 120} className="card-wrap">
+          {trainings.items.map((item, i) => <Reveal key={item.href} effect="zoom" delay={i * 120} className="card-wrap">
             <article className={item.image ? 'case photo' : 'case'} style={item.image ? { '--case-photo': `url('${item.image}')`, '--case-pos': item.imagePos } as React.CSSProperties : undefined}>
               <span className="case-date">{item.date}</span>
               <h3>{item.name}</h3>

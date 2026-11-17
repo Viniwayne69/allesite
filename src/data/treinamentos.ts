@@ -1,15 +1,15 @@
-// Páginas de treinamento (/profissionalismo-a-mesa, /apaixonados-por-vendas, /mesa-estrategica).
+// Páginas de treinamento: /apaixonados-por-vendas-recife, /apaixonados-por-vendas-carpina e /mesa-estrategica.
+// Os endereços antigos (/apaixonados-por-vendas e /profissionalismo-a-mesa) redirecionam, ver next.config.ts.
 // Textos enviados pela Allê; aqui só foi corrigida a ortografia. Para criar outra página, acrescente um item em `trainingPages`.
-// TODO (falta a Allê confirmar): horário e unidade da Mesa Estratégica (15/12), links de inscrição da Mesa Estratégica,
-// e a pergunta "Dá para fazer dentro do meu estabelecimento?" do Profissionalismo à Mesa (ainda sem resposta).
+// TODO (falta a Allê confirmar): horário e unidade da Mesa Estratégica (15/12) e links de inscrição da Mesa Estratégica.
 
-export const SEBRAE_VENDEDORES_URL = 'https://pe.loja.sebrae.com.br/treinamento-de-vendas-ev-931677';
+export const SEBRAE_RECIFE_URL = 'https://pe.loja.sebrae.com.br/treinamento-de-vendas-ev-931687';
+export const SEBRAE_CARPINA_URL = 'https://pe.loja.sebrae.com.br/apaixonados-por-vendas-ev-1037117';
 // Script do Google que grava as inscrições na planilha "Mesa estratégica" (aba Inscrições).
 export const PLANILHA_INSCRICOES_URL =
   process.env.NEXT_PUBLIC_INSCRICAO_URL
   ?? 'https://script.google.com/macros/s/AKfycbwXiOr5ua5h53wONUgy0CbiIBtgPI1X6rCnvBlFSVpx9zAC3Ojw7BRrsirUL2Vo9Qjg/exec';
 export const INSCRICAO_MESA_URL = 'https://docs.google.com/document/d/1bB3XRxNCDfWNa8tQeq9kgV3guuBFQT32ZKxlhjNgc4s/edit?usp=sharing';
-export const SEBRAE_GARCONS_URL = 'https://pe.loja.sebrae.com.br/profissionalismo-a-mesa-habilidades-para-garcons-de-sucesso-ev-931692';
 
 /** Item de lista: texto simples, ou um destaque em negrito seguido do texto. */
 export type Item = string | { lead: string; text: string };
@@ -45,106 +45,29 @@ export type Training = {
 
 const ALLE_PHOTO = '/images/alle-recortada-3.webp';
 
-export const trainingPages: Training[] = [
-  {
-    slug: 'profissionalismo-a-mesa',
-    title: ['Profissionalismo à Mesa:', 'habilidades para um garçom de sucesso.'],
-    subtitle:
-      'Um treinamento para as equipes de atendimento de negócios de alimentação (restaurantes, bares, cafeterias, confeitarias e docerias) atenderem melhor, venderem mais em cada mesa e fazerem o cliente voltar. Dia 16/11, das 8h30 às 12h30, no Sebrae PE.',
-    chips: ['16/11', '8h30 às 12h30', 'Sebrae PE'],
-    heroImage: { src: '/images/treinamentos-fundo-2.webp', position: '50% 30%' },
-    cta: { label: 'Quero inscrever minha equipe', href: SEBRAE_GARCONS_URL },
-    audience: {
-      intro:
-        'Para o time de atendimento de negócios de alimentação: garçons, maîtres e o time de atendimento online (WhatsApp, delivery, reservas e encomendas). Não é um treinamento para o dono: é para quem atende o cliente todos os dias.',
-      listLead: 'É para a casa em que:',
-      items: [
-        'a equipe é simpática, mas cada um atende de um jeito',
-        'o cliente pede só o prato principal ou só o café, quando poderia ter pedido a entrada, a bebida, a sobremesa ou levado algo para casa',
-        'o WhatsApp demora a responder e perde a reserva, o pedido ou a encomenda por falta de uma boa sugestão',
-        'tem gente nova no salão e ninguém com tempo de treinar um por um',
-        'o objetivo é o cliente voltar, indicar e avaliar bem a casa',
-      ],
-    },
-    why: {
-      title: 'Por que agora',
-      paragraphs: [
-        'O fim de ano é a temporada da alimentação: confraternizações, encomendas de Natal, mesas cheias e cliente novo conhecendo a casa. É quando um bom atendimento mais vende, e quando um atendimento ruim mais aparece nas avaliações. Preparar a equipe agora é chegar em dezembro com todo mundo atendendo do mesmo jeito: bem.',
-      ],
-    },
-    topics: {
-      title: 'O que vamos trabalhar',
-      items: [
-        { lead: 'Atendimento e hospitalidade', text: 'Fazer o cliente se sentir bem-vindo desde a porta.' },
-        { lead: 'Postura profissional', text: 'Apresentação, atenção à mesa e o comportamento que passa confiança.' },
-        { lead: 'Comunicação com o cliente', text: 'O que falar, como falar e como lidar com reclamações, no salão e no WhatsApp.' },
-        { lead: 'Técnicas de serviço', text: 'O passo a passo do serviço à mesa, com agilidade e cuidado.' },
-        { lead: 'Conhecimento dos produtos', text: 'Saber descrever o cardápio, porque ninguém recomenda o que não conhece.' },
-        { lead: 'Venda consultiva e aumento do ticket médio', text: 'Sugerir a entrada, a bebida, a sobremesa e o “para levar” sem parecer empurrado.' },
-        { lead: 'Fidelização de clientes', text: 'Os detalhes que fazem o cliente voltar e indicar.' },
-      ],
-    },
-    gains: {
-      title: 'O que a sua equipe leva',
-      items: [
-        'Um padrão de atendimento único para a casa',
-        'Frases prontas para receber, sugerir, oferecer o adicional e se despedir',
-        'Mais segurança para recomendar o cardápio e aumentar o valor de cada mesa',
-        'Um olhar de quem cuida do cliente para que ele volte',
-      ],
-    },
-    format: {
-      title: 'Formato',
-      items: [
-        'Presencial, dia 16/11, das 8h30 às 12h30 (4 horas), no Sebrae PE',
-        'Para garçons, maîtres e o time de atendimento online',
-      ],
-    },
-    investment: {
-      title: 'Investimento',
-      prices: [{ old: 'R$ 350,00', value: 'R$ 126,00', note: 'por pessoa' }],
-      cta: 'Inscrever minha equipe',
-    },
-    hosts: {
-      title: 'Quem conduz',
-      people: [
-        {
-          bio: 'Allê Ebrahim começou como vendedora, foi gerente e supervisora em uma grande rede de varejo e empreendeu no ramo de entretenimento e alimentação, à frente de bar e casa noturna. Hoje tem uma empresa de treinamentos de vendas que já preparou milhares de pessoas. Ela conhece o salão porque já esteve do outro lado do balcão.',
-          photo: ALLE_PHOTO,
-        },
-      ],
-      links: true,
-    },
-    faq: [
-      {
-        q: 'Quem deve participar?',
-        a: 'Garçons, maîtres e o time de atendimento online (WhatsApp, delivery, reservas e encomendas). Não é um treinamento para o dono: o dono inscreve a equipe e recebe o time de volta com um padrão de atendimento único.',
-      },
-      {
-        q: 'Serve para o meu tipo de negócio?',
-        a: 'Serve para restaurantes, bares, cafeterias, confeitarias, docerias e qualquer casa com atendimento à mesa, no balcão ou pelo WhatsApp.',
-      },
-      {
-        q: 'Minha equipe é pequena. Vale a pena?',
-        a: 'Vale ainda mais: em casa pequena, cada atendimento pesa no resultado e nas avaliações.',
-      },
-    ],
-  },
-
-  {
-    slug: 'apaixonados-por-vendas',
-    title: ['Apaixonados por Vendas:', 'a última edição aberta de 2026.'],
-    subtitle:
-      'Prepare a sua equipe antes do período em que o movimento aumenta, os clientes estão mais dispostos a comprar e cada oportunidade precisa virar venda. Dia 11/11, das 8h30 às 12h30, no Sebrae PE.',
-    chips: ['11/11', '8h30 às 12h30', 'Sebrae PE'],
-    heroImage: { src: '/images/treinamentos-fundo.webp', position: '60% 10%' },
-    cta: { label: 'Quero inscrever minha equipe', href: SEBRAE_VENDEDORES_URL },
+/** Apaixonados por Vendas: o mesmo conteúdo, oferecido em unidades diferentes do Sebrae. */
+function apaixonadosPorVendas(edicao: {
+  slug: string;
+  data: string;
+  horario: string;
+  local: string;
+  url: string;
+  heroImage: Training['heroImage'];
+}): Training {
+  const { slug, data, horario, local, url, heroImage } = edicao;
+  return {
+    slug,
+    title: ['Apaixonados por Vendas:', 'prepare o seu time para o fim de ano.'],
+    subtitle: `Prepare a sua equipe antes do período em que o movimento aumenta, os clientes estão mais dispostos a comprar e cada oportunidade precisa virar venda. Dia ${data}, das ${horario}, no ${local}.`,
+    chips: [data, horario, local],
+    heroImage,
+    cta: { label: 'Quero inscrever minha equipe', href: url },
     audience: {
       intro:
         'Para o time comercial: vendedores presenciais e online, gerentes e autônomos que vendem o próprio serviço. Não é um treinamento para o dono da empresa: é para quem está na linha de frente, falando com o cliente todos os dias.',
       listLead: 'É para você que:',
       items: [
-        'vai atender muito mais gente em novembro e dezembro e quer dar conta quando a loja ou o WhatsApp estiverem cheios',
+        'vai atender muito mais gente em dezembro e quer dar conta quando a loja ou o WhatsApp estiverem cheios',
         'chegou há pouco tempo no time e quer pegar o ritmo antes do pico',
         'vê o cliente entrar, olhar e ir embora sem comprar, ou parar de responder no WhatsApp',
         'quer vender com mais segurança, sem depender só de desconto',
@@ -156,7 +79,7 @@ export const trainingPages: Training[] = [
       paragraphs: [
         'O fim de ano é a época em que o cliente mais compra, e também a época em que a equipe menos tem tempo para aprender. O cliente de hoje chega pesquisado: compara preço no celular, conhece o produto e sabe o que quer. Quem atende no improviso perde venda justamente nos dias de maior movimento.',
       ],
-      highlight: 'Esta é a última edição aberta do ano: depois dela, a equipe já entra na Black Friday e no Natal.',
+      highlight: 'Em dezembro cada atendimento conta: chegue ao Natal com o time preparado para transformar movimento em venda.',
     },
     topics: {
       title: 'O que vamos trabalhar',
@@ -180,7 +103,7 @@ export const trainingPages: Training[] = [
     format: {
       title: 'Formato',
       items: [
-        'Presencial, dia 11/11, das 8h30 às 12h30 (4 horas), no Sebrae PE',
+        `Presencial, dia ${data}, das ${horario} (4 horas), no ${local}`,
         'Para vendedores presenciais e online, gerentes e autônomos. Quem aprende junto vende do mesmo jeito: vale inscrever o time inteiro',
       ],
     },
@@ -213,7 +136,26 @@ export const trainingPages: Training[] = [
         a: 'Não. É para quem vende: vendedores presenciais e online, gerentes e autônomos. O dono inscreve o time e recebe a equipe de volta preparada para o fim de ano.',
       },
     ],
-  },
+  };
+}
+
+export const trainingPages: Training[] = [
+  apaixonadosPorVendas({
+    slug: 'apaixonados-por-vendas-recife',
+    data: '02/12',
+    horario: '18h às 22h',
+    local: 'Sebrae Recife',
+    url: SEBRAE_RECIFE_URL,
+    heroImage: { src: '/images/treinamentos-fundo.webp', position: '60% 10%' },
+  }),
+  apaixonadosPorVendas({
+    slug: 'apaixonados-por-vendas-carpina',
+    data: '02/12',
+    horario: '8h às 12h',
+    local: 'Sebrae Carpina',
+    url: SEBRAE_CARPINA_URL,
+    heroImage: { src: '/images/treinamentos-fundo-2.webp', position: '50% 30%' },
+  }),
 
   {
     slug: 'mesa-estrategica',
